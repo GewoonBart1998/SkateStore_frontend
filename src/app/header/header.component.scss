@@ -1,0 +1,47 @@
+#icons{
+    float: right;
+    padding-right: 8%;
+    padding-top: 45px;
+}
+
+#icons li{
+    display: inline;
+    margin-left: 40px;
+}
+
+.navbar{
+    height: 120px;
+    background-color: #262626;
+}
+
+.nav{
+    float: left;
+	width: 1200px;
+	padding-top: 35px;
+    padding-left: 22.5%;
+}
+
+.nav li{
+    padding-left: 3%
+}
+
+.nav a{
+    color: #FFF;
+    font-weight: bold;
+    font-size: 25px;
+
+}
+
+.nav a:hover{
+    color: rgb(255, 122, 14);
+}
+
+#logo{
+    float: left;
+    padding-top: 25px;
+	padding-left: 8%;
+}
+
+#card{
+    margin-right: 10px;
+}

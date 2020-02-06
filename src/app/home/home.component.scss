@@ -1,0 +1,49 @@
+body{
+    width: 100%;
+    margin: 0;
+}
+
+
+
+
+#mainimage{
+padding-left: 27.5%;
+}
+
+#mainimage img:hover{
+filter: brightness(50%);
+z-index: 50;
+
+}
+
+#imagelist{
+    padding-top: 15px;
+    padding-bottom:5px ;
+    padding-left: 25.8%;
+}
+
+#imagelist li{
+display: inline;
+padding: 0px 15px 0px 0px;
+
+}
+
+#imagelist img:hover{
+filter: brightness(50%);
+z-index: 50;
+
+}
+
+
+#korting{
+    padding-left: 27.5%;
+
+}
+
+#footer{
+width: 100%;
+height: 100px;
+background-color: #262626;
+margin-top: 50px; 
+}
+

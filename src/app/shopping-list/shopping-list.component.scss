@@ -1,0 +1,12 @@
+#items{
+    display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 1em;
+	grid-row-gap: 3%;
+	list-style: none;
+	padding-top: 5%;
+
+	padding-bottom: 5%;
+	padding-left: 10%;
+	margin: 0;
+}
