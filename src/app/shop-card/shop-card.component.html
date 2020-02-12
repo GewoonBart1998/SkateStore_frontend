@@ -1,0 +1,11 @@
+<div  class="row">
+  <div id="cartitems">
+    <app-cart-item *ngFor="let productEl of cartProducts"
+                   [cartProducts]="productEl">
+                   </app-cart-item>
+  </div>
+</div>
+
+<div class="col-xs-12">
+  <button class="btn btn-success" type="submit" (click)="loadcart()">Add</button>
+</div>

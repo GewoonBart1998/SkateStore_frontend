@@ -9,40 +9,34 @@ import { product } from '../shopping-list/shop-item.model';
 })
 export class ShopCardComponent implements OnInit {
 
-  
-  @Input() products: product;
-  
 
-  // let key = 'Item 1';
+  cartProducts: product[] =[];
 
 
-  constructor(){}
 
-  
 
-  addItem(products: product){
-    var num = localStorage.length + 1;
-    let key = num.toString();
-    localStorage.setItem(key , JSON.stringify({ Name: products.name, Price: products.price, 
-      Description: products.description, ImagePath: products.imagePath }));
-      let item = JSON.parse(localStorage.getItem(key));
-  }
 
-  removeItem(){
-  }
-
-  buyItems(){
-    localStorage.clear();
-  }
-
-  clearShopCard(){
-    localStorage.clear();
-  }
 
   ngOnInit() {
-  
+
+
   }
 
-  
- 
+  public loadcart(){
+    for (let i = 0; i < localStorage.length; i++){
+      let key = localStorage.key(i);
+      let item = JSON.parse(localStorage.getItem(key));
+      this.cartProducts.push(item);
+      // console.log(item);
+    }
+
+
+  }
+
+
+
+
+
+
+
 }

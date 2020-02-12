@@ -10,18 +10,22 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShopItemComponent } from './shop-item/shop-item.component';
 import { ShopCardComponent } from './shop-card/shop-card.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
-import { HttpserviceComponent } from './httpservice/httpservice.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { HomeComponent} from './home/home.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+
+
+
 
 const appRoutes: Routes =[
   { path: '', component: HomeComponent },
   { path: 'shop-card', component: ShopCardComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
-  { path: 'item-details', component: ItemDetailsComponent }
+  { path: 'item-details/:product', component: ItemDetailsComponent },
 
 
-  
+
 ];
 
 @NgModule({
@@ -33,17 +37,17 @@ const appRoutes: Routes =[
     ShopItemComponent,
     ShopCardComponent,
     AdminPortalComponent,
-    HttpserviceComponent,
     ItemDetailsComponent,
-    HomeComponent
-    
-    
+    HomeComponent,
+    CartItemComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

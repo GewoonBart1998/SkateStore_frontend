@@ -1,23 +1,27 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { product } from '../shopping-list/shop-item.model';
-import { ShopCardComponent } from '../shop-card/shop-card.component';
+import { storageService } from '../services/storage-service';
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
   selector: 'app-item-details',
   templateUrl: './item-details.component.html',
   styleUrls: ['./item-details.component.scss'],
-  providers: [ShopCardComponent]
 })
 export class ItemDetailsComponent implements OnInit {
-  @Input() products: product;
-  
+  products: product = new product(1, '', 1, '','');
+
 
   constructor(
-    private shopCardComponent: ShopCardComponent
+    private storageService: storageService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(data => {
+      console.log(data.product);
+    });
   }
 
   // showProduct(Product: product){
@@ -25,7 +29,7 @@ export class ItemDetailsComponent implements OnInit {
   // }
 
  addVerstuurItem(){
-    this.shopCardComponent.addItem(this.products);
+    this.storageService.addItem(this.products);
   }
 
 
