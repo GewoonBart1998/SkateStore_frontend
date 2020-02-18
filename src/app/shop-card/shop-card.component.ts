@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, } from '@angular/core';
 import { product } from '../shopping-list/shop-item.model';
+import {ActivatedRoute} from "@angular/router";
+import { interval } from "rxjs";
 
 
 @Component({
@@ -12,22 +14,22 @@ export class ShopCardComponent implements OnInit {
 
   cartProducts: product[] =[];
 
-
-
-
+  constructor(
+  ) { }
 
 
   ngOnInit() {
-
+    this.loadcart();
 
   }
 
   public loadcart(){
+    console.log(localStorage.length);
     for (let i = 0; i < localStorage.length; i++){
       let key = localStorage.key(i);
       let item = JSON.parse(localStorage.getItem(key));
-      this.cartProducts.push(item);
-      // console.log(item);
+      console.log(item);
+      this.cartProducts.push(new product(item.Id, item.Name, item.Price, item.Description, item.ImagePath));
     }
 
 

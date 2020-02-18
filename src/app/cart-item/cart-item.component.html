@@ -1,12 +1,12 @@
-<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<!--<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">-->
 
 <div>
   <a>
     <div id="itemcard">
-      <img id="productsimage" src="{{ cartProducts.imagePath }}"  class="img-responsive" style="height: 450px;" style="width: 450px;">
+      <img id="productsimage" src="{{ cartProducts.product_path }}"  class="img-responsive" style="height: 450px;" style="width: 450px;">
     </div>
-    <h4 class="list-group-item-heading">{{ cartProducts.name }}</h4>
-    <p class="list-group-item-heading">€ {{ cartProducts.price }}</p>
+    <h4 class="list-group-item-heading">{{ cartProducts.product_name }}</h4>
+    <p class="list-group-item-heading">€ {{ cartProducts.product_price }}</p>
   </a>
 
 </div>

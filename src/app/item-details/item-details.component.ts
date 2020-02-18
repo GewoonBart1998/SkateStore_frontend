@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { product } from '../shopping-list/shop-item.model';
 import { storageService } from '../services/storage-service';
 import {ActivatedRoute} from "@angular/router";
+import {ProductService} from "../services/product-service"
+
 
 
 @Component({
@@ -10,17 +12,21 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./item-details.component.scss'],
 })
 export class ItemDetailsComponent implements OnInit {
-  products: product = new product(1, '', 1, '','');
+  products: product ;
 
 
   constructor(
     private storageService: storageService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private productService: ProductService
+
   ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(data => {
-      console.log(data.product);
+      this.productService.getById(data.id).subscribe(product => {
+        this.products = product;
+      });
     });
   }
 

@@ -18,9 +18,8 @@ export class ProductService {
 
 
 
-  //TODO clean method names
   getById(productId: number) {
-    return this.api.get<product>(`${this.resourcePath}/${productId}`);
+    return this.api.get<product>(this.resourcePath + '/' + productId);
   }
 
   create(products: product) {

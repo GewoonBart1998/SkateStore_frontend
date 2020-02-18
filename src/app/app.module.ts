@@ -14,6 +14,8 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { HomeComponent} from './home/home.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+
 
 
 
@@ -22,7 +24,7 @@ const appRoutes: Routes =[
   { path: '', component: HomeComponent },
   { path: 'shop-card', component: ShopCardComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
-  { path: 'item-details/:product', component: ItemDetailsComponent },
+  { path: 'item-details/:id', component: ItemDetailsComponent },
 
 
 
@@ -46,6 +48,7 @@ const appRoutes: Routes =[
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
 
   ],

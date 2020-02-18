@@ -1,16 +1,16 @@
 export class product {
 
-    public id: number;
-    public name: String;
-    public price: number;
-    public description: String;
-    public imagePath: String;
+    public product_id: number;
+    public product_name: String;
+    public product_price: number;
+    public product_description: String;
+    public product_path: String;
 
-    constructor(id: number, name: String, price: number, description: String, imagePath: String){
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.imagePath = imagePath;
+    constructor(product_id: number, product_name: String, product_price: number, product_description: String, product_path: String){
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_description = product_description;
+        this.product_path = product_path;
     }
 }

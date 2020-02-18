@@ -14,13 +14,13 @@
 
 <div>
     <a
-    routerLink="/item-details/{{ products.name }}"
+    routerLink="/item-details/{{ products.product_id }}"
         (click)="onSelected()">
-        <div id="itemcard">
-            <img id="productsimage" src="{{ products.imagePath }}"  class="img-responsive" style="height: 450px;" style="width: 450px;">
+        <div id="item">
+            <img id="productsimage" src="{{ products.product_path }}"  class="img-responsive" style="height: 450px;" style="width: 450px;">
         </div>
-            <h4 class="list-group-item-heading">{{ products.name }}</h4>
-            <p class="list-group-item-heading">€ {{ products.price }}</p>
+            <h4 class="list-group-item-heading">{{ products.product_name }}</h4>
+            <p class="list-group-item-heading">€ {{ products.product_price }}</p>
     </a>
 
 </div>
