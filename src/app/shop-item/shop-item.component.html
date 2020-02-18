@@ -1,26 +1,21 @@
-<!-- <div id="itemcard">
-    <a
-    routerLink="/item-details"
-        (click)="onSelected()">
-        <span>
-                <img src="{{ products.imagePath }}"  class="img-responsive" style="max-height: 350px;">
-        </span>
-            <h4 class="list-group-item-heading">{{ products.name }}</h4>
-            <p class="list-group-item-heading">{{ products.price }}</p>
-    </a>
-</div> -->
+
 
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
-<div>
+<div id="shopItemcontainer">
     <a
     routerLink="/item-details/{{ products.product_id }}"
         (click)="onSelected()">
         <div id="item">
             <img id="productsimage" src="{{ products.product_path }}"  class="img-responsive" style="height: 450px;" style="width: 450px;">
+          <div id="shopItemInfo">
+            <p id="shopItemName" class="list-group-item-heading">{{ products.product_name }}</p>
+            <p id="shopItemPrice" class="list-group-item-heading">€ {{ products.product_price }}</p>
+          </div>
+
         </div>
-            <h4 class="list-group-item-heading">{{ products.product_name }}</h4>
-            <p class="list-group-item-heading">€ {{ products.product_price }}</p>
+
+
     </a>
 
 </div>

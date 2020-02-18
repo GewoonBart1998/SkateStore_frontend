@@ -1,12 +1,50 @@
 #cartitems{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 1em;
-  grid-row-gap: 3%;
   list-style: none;
-  padding-top: 5%;
+  padding-top: 25px;
 
-  padding-bottom: 5%;
+  padding-bottom: 25px;
   padding-left: 10%;
   margin: 0;
 }
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#cartinteractive {
+  padding-left: 10%;
+  margin: 0;
+}
+#totaalPrijs{
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  color: black;
+  padding-bottom: 10px;
+}
+
+#clear{
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  margin-right: 25px;
+  height: 50px;
+  width: 150px;
+}
+
+#order{
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  margin-right: 25px;
+  height: 50px;
+  width: 150px;
+}
+
+#buttons{
+  margin-bottom: 50px;
+}
+
+
+
+
+
+

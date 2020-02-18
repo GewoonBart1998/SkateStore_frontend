@@ -6,6 +6,12 @@
   </div>
 </div>
 
-<div class="col-xs-12">
-  <button class="btn btn-success" type="submit" (click)="loadcart()">Add</button>
+<div  id="cartinteractive" lass="col-xs-12">
+  <p id="totaalPrijs">€ {{Totaalprijs}}</p>
+  <div id="buttons">
+    <button id="clear" class="btn btn-danger" type="submit" (click)="clearCart()">Clear cart</button>
+    <button id="order" class="btn btn-success" type="submit" (click)="orderCart()">Order cart</button>
+  </div>
+
+
 </div>

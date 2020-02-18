@@ -26,6 +26,7 @@ export class storageService {
 
   clearShopCard(){
     localStorage.clear();
+
   }
 
 

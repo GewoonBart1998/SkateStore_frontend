@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, } from '@angular/core';
 import { product } from '../shopping-list/shop-item.model';
-import {ActivatedRoute} from "@angular/router";
-import { interval } from "rxjs";
+import { storageService } from '../services/storage-service';
+
 
 
 @Component({
@@ -13,8 +13,11 @@ export class ShopCardComponent implements OnInit {
 
 
   cartProducts: product[] =[];
+  Totaalprijs: number = 0;
 
   constructor(
+    private storageService: storageService
+
   ) { }
 
 
@@ -28,11 +31,20 @@ export class ShopCardComponent implements OnInit {
     for (let i = 0; i < localStorage.length; i++){
       let key = localStorage.key(i);
       let item = JSON.parse(localStorage.getItem(key));
-      console.log(item);
+      this.Totaalprijs += item.Price;
+      console.log(this.Totaalprijs)
       this.cartProducts.push(new product(item.Id, item.Name, item.Price, item.Description, item.ImagePath));
     }
+  }
 
+  public clearCart(){
+    this.storageService.clearShopCard();
+    window.location.reload();
+  }
 
+  public orderCart(){
+    this.storageService.clearShopCard();
+    window.location.reload();
   }
 
 

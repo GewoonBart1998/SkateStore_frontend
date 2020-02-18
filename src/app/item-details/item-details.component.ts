@@ -30,9 +30,6 @@ export class ItemDetailsComponent implements OnInit {
     });
   }
 
-  // showProduct(Product: product){
-  //   this.products.add(this.products);
-  // }
 
  addVerstuurItem(){
     this.storageService.addItem(this.products);
