@@ -1,17 +1,26 @@
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
-<div class="row">
+
+<div id="itemDetailsContainer" class="row">
     <div class=col-xs-12>
         <img src="" alt="" class="img-responsive">
     </div>
-    <div class="col-xs-12">
-        <img src="{{ products.product_path }}"  class="img-responsive" style="max-height: 350px;">
-        <h4 class="list-group-item-heading">{{ products.product_name }}</h4>
-        <p class="list-group-item-heading">{{ products.product_price }}</p>
-        <h5 class="list-group-item-heading">{{ products.product_description }}</h5>
+    <div id="detailsItem" class="col-xs-12">
+      <div id="imageContainer">
+        <img id="itemDetailsImage" src="{{ products.product_path }}"  class="img-responsive">
+      </div>
+      <div id="itemDetailsInfo">
+        <h1 class="list-group-item-heading">{{ products.product_name }}</h1>
+        <p class="list-group-item-heading">€ {{ products.product_price }}</p>
+        <div id="detailsContainer">
+          <p class="list-group-item-heading">{{ products.product_description }}</p>
+        </div>
+        <div id="buttonAdd" class="col-xs-12">
+          <button class="btn btn-success" type="submit" (click)="addVerstuurItem()">Add</button>
+        </div>
+      </div>
+
     </div>
+
 </div>
-<div class="row">
-    <div class="col-xs-12">
-        <button class="btn btn-success" type="submit" (click)="addVerstuurItem()">Add</button>
-    </div>
-</div>
+

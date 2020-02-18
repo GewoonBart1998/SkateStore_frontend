@@ -1,0 +1,58 @@
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+
+#itemDetailsContainer{
+  padding-left: 20%;
+}
+
+#imageContainer{
+  float: left;
+}
+
+#itemDetailsImage {
+  margin-top: 25px;
+  width: 750px;
+  height: auto;
+  padding-bottom: 50px;
+}
+
+#itemDetailsInfo{
+  float: left;
+  margin-top: 25px;
+  margin-left: 50px;
+
+}
+
+h1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 45px;
+  color: black;
+  padding-bottom: 10px;
+
+}
+
+p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  color: black;
+}
+
+#detailsContainer{
+  height: 200px;
+  max-height: 200px;
+  width: 550px;
+  word-wrap: break-word;
+  white-space:pre-wrap;
+}
+
+#buttonAdd button{
+  float: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  margin-right: 25px;
+  height: 50px;
+  width: 150px;
+}
