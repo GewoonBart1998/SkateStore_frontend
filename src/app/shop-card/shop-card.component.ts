@@ -14,6 +14,11 @@ export class ShopCardComponent implements OnInit {
 
   cartProducts: product[] =[];
   Totaalprijs: number = 0;
+  private array_elements: string[];
+  current: string = null;
+  cnt: number = 0;
+
+
 
   constructor(
     private storageService: storageService
@@ -23,6 +28,7 @@ export class ShopCardComponent implements OnInit {
 
   ngOnInit() {
     this.loadcart();
+    // this.count();
 
   }
 
@@ -31,9 +37,8 @@ export class ShopCardComponent implements OnInit {
     for (let i = 0; i < localStorage.length; i++){
       let key = localStorage.key(i);
       let item = JSON.parse(localStorage.getItem(key));
-      this.Totaalprijs += item.Price;
-      console.log(this.Totaalprijs)
-      this.cartProducts.push(new product(item.Id, item.Name, item.Price, item.Description, item.ImagePath));
+      this.Totaalprijs += item.Price * item.amount;
+      this.cartProducts.push(new product(item.Id, item.Name, item.Price, item.Description, item.ImagePath, item.amount));
     }
   }
 
@@ -46,6 +51,7 @@ export class ShopCardComponent implements OnInit {
     this.storageService.clearShopCard();
     window.location.reload();
   }
+
 
 
 

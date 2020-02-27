@@ -27,7 +27,7 @@ export class ShoppingListComponent implements OnInit {
     this.productService.list().subscribe(res => {
       for (let i = 0; i < res.length; i++) {
 
-        this.products.push(new product(res[i].product_id, res[i].product_name, res[i].product_price, res[i].product_description, res[i].product_path));
+        this.products.push(new product(res[i].product_id, res[i].product_name, res[i].product_price, res[i].product_description, res[i].product_path , 0));
       }
       });
   }

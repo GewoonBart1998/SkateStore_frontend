@@ -5,11 +5,13 @@
     <div id="itemcard">
       <img id="productsimage" src="{{ cartProducts.product_path }}"  class="img-responsive" style="height: 150px;" style="width: 150px;">
     </div>
-  <button class="btn btn-danger" type="submit">Delete</button>
+  <button class="btn btn-danger" (click)="deleteItem()" type="submit">Delete</button>
   <div id="info">
       <h4 id="name" class="list-group-item-heading">{{ cartProducts.product_name }}</h4>
       <p id="price" class="list-group-item-heading">€ {{ cartProducts.product_price }}</p>
-    </div>
+    <p id="amount" class="list-group-item-heading">Amount: {{ cartProducts.product_amount }}</p>
+
+  </div>
   </div>
   <hr>
 
