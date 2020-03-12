@@ -30,8 +30,9 @@ export class ProductService {
     return this.api.put(`${this.resourcePath}/${productId}`, products);
   }
 
+
   delete(productId: number) {
-    return this.api.delete(`${this.resourcePath}/${productId}`);
+    return this.api.delete(this.resourcePath + '/' + productId);
   }
 
 

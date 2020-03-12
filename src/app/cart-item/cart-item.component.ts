@@ -19,7 +19,6 @@ export class CartItemComponent implements OnInit {
   }
   deleteItem(){
     this.storageService.removeItem(this.cartProducts);
-    window.location.reload();
 
   }
 

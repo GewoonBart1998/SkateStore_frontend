@@ -2,6 +2,7 @@
     <div id="items">
         <app-shop-item *ngFor="let productEl of products"
         [products]="productEl"
-        (shopItemSelected)="onShopItemSelected(productEl)"></app-shop-item>
+        (shopItemSelected)="onShopItemSelected(productEl)">
+        </app-shop-item>
     </div>
 </div>

@@ -15,13 +15,9 @@ export class storageService {
       for (let i = 0; i < localStorage.length; i++){
         let key = localStorage.key(i);
         let item = JSON.parse(localStorage.getItem(key));
-        console.log("key: " + key)
-        console.log("storage itme: " + item.Name)
-        console.log("gekozen product:" + products.product_name)
-        if(item.Name == products.product_name){
+        if(item.Id == products.product_id){
           this.ProductOptellen(products, key);
           break;
-
         }else{
           this.productToevoegen(products, key);
           break;
@@ -29,12 +25,10 @@ export class storageService {
     }
     }else{
       this.productToevoegen(products, "0");
-      console.log("nog geen producten " + products.product_name + " toegevoegd");
     }
   }
 
   productToevoegen(products: product, key: string){
-    console.log(products.product_name + " toegevoegd")
     console.log(localStorage.length)
     this.newkey = localStorage.length + 1;
     localStorage.setItem(this.newkey.toString() , JSON.stringify({ Id: products.product_id, Name: products.product_name, Price: products.product_price,
@@ -42,8 +36,6 @@ export class storageService {
   }
 
   ProductOptellen(products: product , key: string){
-    console.log(products.product_name + " opgeteld")
-
     let item = JSON.parse(localStorage.getItem(key));
     let newAmount = item.amount + 1;
     localStorage.setItem(key , JSON.stringify({ Id: products.product_id, Name: products.product_name, Price: products.product_price,

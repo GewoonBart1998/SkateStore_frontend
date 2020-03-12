@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, } from '@angular/core';
 import { product } from '../shopping-list/shop-item.model';
 import { storageService } from '../services/storage-service';
+// import { snackbarService } from '../services/snackbar-service';
+
 
 
 
@@ -21,14 +23,14 @@ export class ShopCardComponent implements OnInit {
 
 
   constructor(
-    private storageService: storageService
+    private storageService: storageService,
+    // private snackbarService: snackbarService
 
   ) { }
 
 
   ngOnInit() {
     this.loadcart();
-    // this.count();
 
   }
 
@@ -44,7 +46,8 @@ export class ShopCardComponent implements OnInit {
 
   public clearCart(){
     this.storageService.clearShopCard();
-    window.location.reload();
+    this.ngOnInit();
+
   }
 
   public orderCart(){

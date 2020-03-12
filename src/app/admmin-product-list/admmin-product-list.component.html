@@ -1,0 +1,14 @@
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+<div  class="row">
+  <button id="nieuwProduct" class="btn btn-primary" type="submit" (click)="openNieuwItemMenu()">Nieuw product</button>
+  <hr id="topLine">
+  <div id="adminProducts">
+    <app-admmin-product *ngFor="let productEl of adminProducts"
+                   [adminProduct]="productEl"
+                        (adminItemSelected)="adminItemSelected(productEl)">
+
+    </app-admmin-product>
+  </div>
+</div>
+

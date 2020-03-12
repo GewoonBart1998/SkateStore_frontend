@@ -1,0 +1,27 @@
+<div>
+
+  <div>
+    <form [formGroup]="productForm">
+      <div class="managerProduct">
+        <p>Product naam</p>
+        <input formControlName="product_name" type="text" matInput>
+      </div>
+      <div class="managerPrijs">
+        <p>Product prijs</p>
+        <input formControlName="product_price" type="text" matInput>
+      </div>
+      <div class="managerDiscription">
+        <p>Product discription</p>
+        <input formControlName="product_description" type="text" matInput>
+      </div>
+      <div class="managerPath">
+        <p>Product path</p>
+        <input formControlName="product_path" type="text" matInput>
+      </div>
+      <div class="buttons">
+        <button  class="btn btn-primary" type="submit"  (click)="Submit()">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div>
