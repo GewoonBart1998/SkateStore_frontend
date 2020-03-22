@@ -16,6 +16,8 @@ export class UserService {
   }
 
   getUser(){
-    return localStorage.getItem("CurrentUser")
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    return currentUser.rol
+
   }
 }

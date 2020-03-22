@@ -1,0 +1,22 @@
+<div id="container" >
+  <a>
+    <div id="product">
+      <div routerLink="/item-manager/{{adminProduct.product_id}}" (click)="onAdminItemSelected()" id="itemcard" >
+        <img id="productsimage" src="{{ adminProduct.product_path }}" class="img-responsive" style="height: 150px;" style="width: 150px;">
+      </div>
+      <div>
+        <button class="btn btn-danger" (click)="deleteAdminproduct()" type="submit">Delete</button>
+      </div>
+      <div id="info">
+        <h4 id="name" class="list-group-item-heading">{{ adminProduct.product_name }}</h4>
+        <p id="price" class="list-group-item-heading">€ {{ adminProduct.product_price }}</p>
+      </div>
+
+    </div>
+  </a>
+  <hr>
+
+
+
+
+</div>

@@ -1,0 +1,22 @@
+
+
+
+<div id="particles-js" class="container">
+
+  <mat-card>
+    <form [formGroup]="userLoginForm">
+      <div class="textfields">
+          <p>Gebruikers naam</p>
+          <input formControlName="Account_name" type="gebruiker" matInput placeholder="gebruikers naam" required>
+
+          <p>Wachtwoord</p>
+          <input type="password" formControlName="Account_password" matInput placeholder="Wachtwoord">
+
+      </div>
+
+      <div class="button-groep">
+        <button  class="form-button float-right" type="submit" mat-flat-button color="primary" autofocus (click)="onLogin() ">Login</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

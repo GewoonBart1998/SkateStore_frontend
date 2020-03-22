@@ -8,7 +8,7 @@ import {UserService} from "../services/user-service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private account: Account;
+  private account: String;
   userrole;
 
 
@@ -23,7 +23,8 @@ export class HeaderComponent implements OnInit {
     this.usercheck();
   }
   usercheck() {
-    this.userrole = this.account.Account_rol.toString();
+    console.log(this.account)
+    this.userrole = this.account;
   }
 
 }

@@ -29,7 +29,6 @@ export class storageService {
   }
 
   productToevoegen(products: product, key: string){
-    console.log(localStorage.length)
     this.newkey = localStorage.length + 1;
     localStorage.setItem(this.newkey.toString() , JSON.stringify({ Id: products.product_id, Name: products.product_name, Price: products.product_price,
       Description: products.product_description, ImagePath: products.product_path, amount: 1}));

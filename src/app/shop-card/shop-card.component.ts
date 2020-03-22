@@ -35,7 +35,6 @@ export class ShopCardComponent implements OnInit {
   }
 
   public loadcart(){
-    console.log(localStorage.length);
     for (let i = 0; i < localStorage.length; i++){
       let key = localStorage.key(i);
       let item = JSON.parse(localStorage.getItem(key));
