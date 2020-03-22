@@ -4,7 +4,9 @@
             <a routerLink="/"><img src="assets/images/logo/logo.png" alt="logo" width="250px" height="65px;"></a>
         </div>
         <div id="icons">
-          <li><a routerLink="/shop-card"><img id="login" src="assets/images/icons/shopping-cart.png" alt="card" width="35px" height="35px;"></a></li>
+          <li *ngIf="userrole == 'ADMIN' || userrole == 'MEDEWERKER'" [hidden]="{ exact: true }" ><a routerLink="/admin-product-list"><img id="product-list" src="assets/images/icons/ItemList.png" alt="card" width="35px" height="35px;"></a></li>
+          <li><a routerLink="/shop-cart"><img id="cart" src="assets/images/icons/shopping-cart.png" alt="card" width="35px" height="35px;"></a></li>
+          <li><a routerLink="/admin-login"><img id="login" src="assets/images/icons/user-shape.png" alt="card" width="35px" height="35px;"></a></li>
 
         </div>
         <div id="collapse" class="collapse navbar-collapse">

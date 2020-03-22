@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Account} from "../admin-login/account.model";
+import {UserService} from "../services/user-service";
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  private account: Account;
+  userrole;
 
-  constructor() { }
+
+  constructor(
+    private userService: UserService
+  ) {
+
+  }
 
   ngOnInit() {
+    this.account = this.userService.getUser()
+    this.usercheck();
+  }
+  usercheck() {
+    this.userrole = this.account.Account_rol.toString();
   }
 
 }

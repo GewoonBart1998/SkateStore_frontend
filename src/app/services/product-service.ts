@@ -23,6 +23,7 @@ export class ProductService {
   }
 
   create(products: product) {
+    console.log(products)
     return this.api.post(this.resourcePath, products);
   }
 
