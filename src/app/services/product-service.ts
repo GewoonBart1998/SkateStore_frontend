@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import { product } from '../shopping-list/shop-item.model';
-// @ts-ignore
 import { ApiService } from '../services/api-service';
 
 @Injectable({

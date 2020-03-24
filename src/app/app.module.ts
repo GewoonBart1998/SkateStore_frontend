@@ -20,7 +20,6 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import { ItemManagerComponent } from './item-manager/item-manager.component';
-import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 import { NewProductComponent } from './new-product/new-product.component';
 import {AuthGuard} from "./auth/auth-guard";
 import {CookieService} from "ngx-cookie-service";
@@ -71,8 +70,8 @@ const appRoutes: Routes =[
     BrowserAnimationsModule,
     MatCardModule,
     MatFormFieldModule,
-    ReactiveFormsModule,
-    MatDialogModule
+    ReactiveFormsModule
+
 
   ],
 

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from '@angular/router';
 import {UserService} from '../services/user-service';
 import { storageService } from '../services/storage-service';
-import {Account} from "./account.model";
-import {product} from "../shopping-list/shop-item.model";
 import {CookieService} from "ngx-cookie-service";
 
 

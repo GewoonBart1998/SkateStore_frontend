@@ -1,6 +1,6 @@
 #icons{
     float: right;
-    padding-right: 8%;
+    padding-right: 5%;
     padding-top: 45px;
 }
 
@@ -12,6 +12,25 @@
 .navbar{
     height: 120px;
     background-color: #262626;
+    border-color: #262626;
+    box-shadow: 0 1px 5px 0;
+    margin: 0;
+}
+
+#wildDays{
+  background-color: rgb(170, 170, 170);
+  margin: 0;
+  height: 45px;
+}
+
+h1{
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  padding-left: 46%;
+  margin: 0;
+  padding-top: 10px;
+
 }
 
 .nav{
@@ -22,7 +41,7 @@
 }
 
 .nav li{
-    padding-left: 3%
+    padding-left: 1%
 }
 
 .nav a{
@@ -39,7 +58,7 @@
 #logo{
     float: left;
     padding-top: 25px;
-	padding-left: 8%;
+	padding-left: 5%;
 }
 
 #card{
@@ -63,5 +82,6 @@
     padding-top: 35px;
     padding-left: 0%;
   }
+
 
 }

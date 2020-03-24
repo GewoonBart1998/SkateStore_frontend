@@ -3,11 +3,9 @@
   margin-left: 0px;
 }
 
-
-
 #items{
-    display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+	grid-template-columns: 1fr 1fr 1fr ;
 	grid-column-gap: 1em;
 	grid-row-gap: 3%;
 	list-style: none;
@@ -16,4 +14,36 @@
 	padding-bottom: 5%;
 	padding-left: 10%;
 	margin: 0;
+}
+
+@media (max-width: 1750px) {
+  #items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 3%;
+    list-style: none;
+    padding-top: 5%;
+
+    padding-bottom: 5%;
+    padding-left: 15%;
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 1000px) {
+  #items{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 3%;
+    list-style: none;
+    padding-top: 10%;
+
+    padding-bottom: 5%;
+    padding-left: 30%;
+    margin: 0;
+  }
+
 }

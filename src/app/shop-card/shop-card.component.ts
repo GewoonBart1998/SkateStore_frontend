@@ -16,9 +16,7 @@ export class ShopCardComponent implements OnInit {
 
   cartProducts: product[] =[];
   Totaalprijs: number = 0;
-  private array_elements: string[];
-  current: string = null;
-  cnt: number = 0;
+
 
 
 

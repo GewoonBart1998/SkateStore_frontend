@@ -1,7 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {product} from "../shopping-list/shop-item.model";
 import {ProductService} from "../services/product-service";
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {Router} from '@angular/router';
 
 
@@ -12,16 +11,13 @@ import {Router} from '@angular/router';
 })
 export class AdmminProductListComponent implements OnInit {
 
-  electedShopItem: product;
   @Output() adminItemWasSelected = new EventEmitter<product>();
 
-  // products: Array<product>;
   adminProducts: product[] = [];
 
 
   constructor(
     private productService: ProductService,
-    private dialog: MatDialog,
     private router: Router
 
   ) {

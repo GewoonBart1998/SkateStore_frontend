@@ -6,13 +6,9 @@ import {product} from "../shopping-list/shop-item.model";
 })
 export class storageService {
 
-  newkey: number = null;
   id: String = null;
   moetToevoegen: boolean = false;
   constructor(){}
-
-
-
 
 
   addItem(products: product){
@@ -72,35 +68,4 @@ export class storageService {
     localStorage.clear();
 
   }
-
-
-
-  // if (localStorage.length != 0){
-  //   for (let i = 0; i < localStorage.length; i++){
-  //     let key = localStorage.key(i);
-  //     let item = JSON.parse(localStorage.getItem(key));
-  //     console.log("key" + key)
-  //     if(item.Id == products.product_id){
-  //       this.id =  key
-  //       this.ProductOptellen(products, key);
-  //       break;
-  //     }else{
-  //       console.log(item.Id)
-  //       console.log(products.product_id)
-  //       console.log(localStorage.length)
-  //       console.log("toevoegen" + true)
-  //       this.moetToevoegen = true;
-  //     }
-  //
-  //     console.log("hallo")
-  //     if (this.moetToevoegen == true){
-  //       let key = localStorage.length +1
-  //       this.productToevoegen(products, key.toString());
-  //       this.moetToevoegen = false;
-  //       break;
-  //     }else {
-  //       this.ProductOptellen(products, this.id.toString());
-
-
-
 }
