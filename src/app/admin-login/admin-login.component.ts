@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {UserService} from '../services/user-service';
 import { storageService } from '../services/storage-service';
 import {Account} from "./account.model";
+import {product} from "../shopping-list/shop-item.model";
+import {CookieService} from "ngx-cookie-service";
 
 
 @Component({
@@ -16,18 +18,17 @@ export class AdminLoginComponent implements OnInit {
   userLoginForm : FormGroup;
 
 
+
   constructor(
     private router: Router,
     private userService: UserService,
     private storageService: storageService,
+    private cookieservice: CookieService
 
   ) {
   }
 
   ngOnInit() {
-    // if (this.userService.isUserLoggedIn()) {
-    //   this.router.navigate(['/home']);
-    // }
     this.buildForm();
   }
 
@@ -39,12 +40,9 @@ export class AdminLoginComponent implements OnInit {
   }
 
   onLogin() {
-    // console.log(this.userLoginForm.value);
-    this.userService.login(this.userLoginForm.value).subscribe(response => {
-      localStorage.setItem("currentUser" , JSON.stringify({name: response.accountName, rol: response.accountRol }));
+    this.userService.login(this.userLoginForm.value).subscribe(Account => {
+      // @ts-ignore
+      this.cookieservice.set("currentUser" , Account.account_rol);
     });
-
-
   }
-
 }

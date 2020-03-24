@@ -1,8 +1,8 @@
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
 <div  class="row">
-<!--  <h1>Producten</h1>-->
-<!--  <hr>-->
+  <h1>Producten</h1>
+  <hr>
   <div id="cartitems">
     <app-cart-item *ngFor="let productEl of cartProducts"
                    [cartProducts]="productEl">
@@ -12,6 +12,7 @@
 
 <div  id="cartinteractive" lass="col-xs-12">
   <p id="totaalPrijs">€ {{Totaalprijs}}</p>
+
   <div id="buttons">
     <button id="order" class="btn btn-success" type="submit" (click)="orderCart()">Order cart</button>
     <button id="clear" class="btn btn-clear" type="submit" (click)="clearCart()">Clear cart</button>

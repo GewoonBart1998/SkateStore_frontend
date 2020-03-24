@@ -10,7 +10,9 @@
         <img id="itemDetailsImage" src="{{ products.product_path }}"  class="img-responsive">
       </div>
       <div id="itemDetailsInfo">
-        <h1 class="list-group-item-heading">{{ products.product_name }}</h1>
+        <div id="NameContainer">
+          <h1 class="list-group-item-heading">{{ products.product_name }}</h1>
+        </div>
         <p class="list-group-item-heading">€ {{ products.product_price }}</p>
         <div id="detailsContainer">
           <p class="list-group-item-heading">{{ products.product_description }}</p>

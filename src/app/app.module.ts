@@ -22,7 +22,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ItemManagerComponent } from './item-manager/item-manager.component';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 import { NewProductComponent } from './new-product/new-product.component';
-
+import {AuthGuard} from "./auth/auth-guard";
+import {CookieService} from "ngx-cookie-service";
 
 
 const appRoutes: Routes =[
@@ -31,10 +32,9 @@ const appRoutes: Routes =[
   { path: 'shopping-list', component: ShoppingListComponent },
   { path: 'item-details/:id', component: ItemDetailsComponent },
   { path: 'admin-login', component: AdminLoginComponent },
-  // { path: 'admin-portal', component: AdminPortalComponent },
-  { path: 'admin-product-list', component: AdmminProductListComponent },
-  { path: 'item-manager/:id', component: ItemManagerComponent },
-  { path: 'new-product', component: NewProductComponent },
+  { path: 'admin-product-list', component: AdmminProductListComponent, canActivate: [AuthGuard] },
+  { path: 'item-manager/:id', component: ItemManagerComponent, canActivate: [AuthGuard] },
+  { path: 'new-product', component: NewProductComponent, canActivate: [AuthGuard] },
 
 
 
@@ -77,7 +77,7 @@ const appRoutes: Routes =[
   ],
 
   exports:[],
-  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [ CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

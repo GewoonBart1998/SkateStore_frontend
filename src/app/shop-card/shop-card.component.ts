@@ -24,7 +24,6 @@ export class ShopCardComponent implements OnInit {
 
   constructor(
     private storageService: storageService,
-    // private snackbarService: snackbarService
 
   ) { }
 
@@ -35,6 +34,7 @@ export class ShopCardComponent implements OnInit {
   }
 
   public loadcart(){
+    console.log(localStorage.length)
     for (let i = 0; i < localStorage.length; i++){
       let key = localStorage.key(i);
       let item = JSON.parse(localStorage.getItem(key));
@@ -45,7 +45,7 @@ export class ShopCardComponent implements OnInit {
 
   public clearCart(){
     this.storageService.clearShopCard();
-    this.ngOnInit();
+    window.location.reload();
 
   }
 

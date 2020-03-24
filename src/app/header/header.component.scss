@@ -16,9 +16,9 @@
 
 .nav{
     float: left;
-	width: 1200px;
+	width: 600px;
 	padding-top: 35px;
-    padding-left: 22.5%;
+    padding-left: 10%;
 }
 
 .nav li{
@@ -33,7 +33,7 @@
 }
 
 .nav a:hover{
-    color: rgb(255, 122, 14);
+    color: #ff8224
 }
 
 #logo{
@@ -44,4 +44,24 @@
 
 #card{
     margin-right: 10px;
+}
+
+#loguit {
+  cursor: pointer;
+}
+
+@media (max-width: 1404px)
+{
+  .navbar{
+    height: 200px;
+    background-color: #262626;
+  }
+
+  .nav{
+    float: left;
+    width: 600px;
+    padding-top: 35px;
+    padding-left: 0%;
+  }
+
 }

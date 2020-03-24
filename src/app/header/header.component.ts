@@ -13,18 +13,20 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(
-    private userService: UserService
-  ) {
-
-  }
+    private userService: UserService,
+  ) {}
 
   ngOnInit() {
     this.account = this.userService.getUser()
     this.usercheck();
   }
+
   usercheck() {
-    console.log(this.account)
     this.userrole = this.account;
+  }
+
+  loguit(){
+    this.userService.logUitUser();
   }
 
 }

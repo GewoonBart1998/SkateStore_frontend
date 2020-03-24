@@ -1,27 +1,27 @@
-<div>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
-  <div>
-    <form [formGroup]="newProductForm">
-      <div class="managerProduct">
-        <p>Product naam</p>
-        <input formControlName="product_name" type="text" matInput>
-      </div>
-      <div class="managerPrijs">
-        <p>Product prijs</p>
-        <input formControlName="product_price" type="text" matInput>
-      </div>
-      <div class="managerDiscription">
-        <p>Product discription</p>
-        <input formControlName="product_description" type="text" matInput>
-      </div>
-      <div class="managerPath">
-        <p>Product path</p>
-        <input formControlName="product_path" type="text" matInput>
-      </div>
-      <div class="buttons">
-        <button  class="btn btn-primary" type="submit"  (click)="Toevoegen()">Submit</button>
-      </div>
+<div id="form">
+  <form [formGroup]="newProductForm">
+    <div class="managerProduct">
+      <p>Product naam</p>
+      <input class="form-control" formControlName="product_name" type="text" matInput>
+    </div>
+    <div class="managerPrijs">
+      <p>Product prijs</p>
+      <input  class="form-control" formControlName="product_price" type="text" matInput>
+    </div>
+    <div class="managerDiscription">
+      <p>Product discription</p>
+      <input  class="form-control" formControlName="product_description" type="text" matInput>
+    </div>
+    <div class="managerPath">
+      <p>Product path</p>
+      <input  class="form-control" formControlName="product_path" type="text" matInput>
+    </div>
+    <div class="buttons">
+      <button  class="btn btn-primary" type="submit"  (click)="Toevoegen()">Submit</button>
+    </div>
 
-    </form>
-  </div>
+  </form>
 </div>
+
