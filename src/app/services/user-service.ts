@@ -18,8 +18,9 @@ export class UserService {
   }
 
   login(account: Account){
-    this.router.navigate(['/admin-product-list'])
-    return this.api.post('/login', account)
+    return this.api.post('/login', account).subscribe(res =>{
+      this.storeJwt(res);
+    })
   }
 
   logUitUser(){
@@ -27,12 +28,38 @@ export class UserService {
     window.location.reload();
   }
 
+
   getUser(){
-    let currentUser = this.cookieservice.get('currentUser');
-    return currentUser;
+    let currentUserRol = this.cookieservice.get('currentUserRol');
+    console.log(this.cookieservice.get('currentUserRol'))
+    return currentUserRol;
   }
 
   isUserLoggedIn() {
-    return this.cookieservice.get('currentUser') =="ADMIN";
+    return this.cookieservice.get('currentUserRol') =="ADMIN";
+  }
+
+
+  /*https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library */
+  private decodeJWT(jwtToken: string) {
+
+    if (jwtToken === null || jwtToken == undefined || jwtToken.length === 0) {
+      return '';
+    }
+
+
+    const base64Url = jwtToken.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+  }
+
+  storeJwt(res: any) {
+    const jwtToken = res.jwtToken;
+    this.cookieservice.set("currentUserRol" , this.decodeJWT(jwtToken).rol);
+    this.cookieservice.set("currentUserName" , this.decodeJWT(jwtToken).name);
   }
 }

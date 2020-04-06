@@ -20,8 +20,6 @@ export class AdminLoginComponent implements OnInit {
   constructor(
     private router: Router,
     private userService: UserService,
-    private storageService: storageService,
-    private cookieservice: CookieService
 
   ) {
   }
@@ -38,9 +36,6 @@ export class AdminLoginComponent implements OnInit {
   }
 
   onLogin() {
-    this.userService.login(this.userLoginForm.value).subscribe(Account => {
-      // @ts-ignore
-      this.cookieservice.set("currentUser" , Account.account_rol);
-    });
+    this.userService.login(this.userLoginForm.value)
   }
 }
