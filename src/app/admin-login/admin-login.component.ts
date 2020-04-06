@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from '@angular/router';
 import {UserService} from '../services/user-service';
-import { storageService } from '../services/storage-service';
-import {CookieService} from "ngx-cookie-service";
+
 
 
 @Component({
