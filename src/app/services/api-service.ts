@@ -13,7 +13,6 @@ export class ApiService {
   }
 
   createQueryString(queryParameters: object) {
-
     if (typeof queryParameters !== 'object') {
       return '';
     }
