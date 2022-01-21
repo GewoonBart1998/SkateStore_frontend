@@ -34,9 +34,9 @@ export class ApiService {
     return `${this.endpoint}${path}${queryString}`;
   }
 
-  get<T>(path: string, queryParameters?: object) {
+  get<T>(path: string, queryParameters?: object ) {
     const url = this.createURL(path, queryParameters);
-    return this.httpClient.get<T>(url);
+    return this.httpClient.get<T>(url,);
   }
 
   post(path: string, body: object | string) {

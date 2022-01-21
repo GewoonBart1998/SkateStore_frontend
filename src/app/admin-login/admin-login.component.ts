@@ -29,8 +29,8 @@ export class AdminLoginComponent implements OnInit {
 
   private buildForm() {
     this.userLoginForm = new FormGroup({
-      Account_name: new FormControl(),
-      Account_password: new FormControl(),
+      account_name: new FormControl(),
+      account_password: new FormControl(),
     });
   }
 

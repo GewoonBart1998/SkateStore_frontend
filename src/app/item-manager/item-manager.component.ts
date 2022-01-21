@@ -18,14 +18,22 @@ export class ItemManagerComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
   ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(data => {
-      this.productService.getById(data.id).subscribe(product => {
-        this.adminProducts = product;
-        this.buildForm(product)
+      this.productService.getById(data.id).subscribe(res => {
+        let temp = new product(
+          res['content'][0].product_id,
+          res['content'][0].product_name,
+          res['content'][0].product_price,
+          res['content'][0].product_description,
+          res['content'][0].product_path ,
+          0
+        )
+        this.adminProducts = temp;
+        this.buildForm(temp)
       });
     });
   }
@@ -36,17 +44,21 @@ export class ItemManagerComponent implements OnInit {
       product_price: new FormControl(Product.product_price),
       product_path: new FormControl(Product.product_path),
       product_description: new FormControl(Product.product_description)
-
     });
 
   }
   Submit(){
-    console.log(this.productForm.value);
-    this.productService.update(this.adminProducts.product_id, this.productForm.value).subscribe(response => {
+    let resproduct = new product(
+      this.adminProducts.product_id,
+      this.productForm.value.product_name,
+      this.productForm.value.product_price,
+      this.productForm.value.product_description,
+      this.productForm.value.product_path ,
+      0
+    );
+    console.log(resproduct)
+    this.productService.edit(resproduct.product_id, resproduct).subscribe(response => {
     });
-    // console.log(this.adminProducts.product_id);
-
-    // console.log(this.productName.value);
   }
 
 }

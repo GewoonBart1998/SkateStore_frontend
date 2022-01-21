@@ -13,7 +13,8 @@ export class ShoppingListComponent implements OnInit {
   selectedShopItem: product;
   @Output() shopItemWasSelected = new EventEmitter<product>();
 
-  // products: Array<product>;
+  // products: Array<product>
+  // products = []
   products: product[] =[];
 
 
@@ -23,9 +24,16 @@ export class ShoppingListComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.productService.list().subscribe(res => {
-      for (let i = 0; i < res.length; i++) {
-        this.products.push(new product(res[i].product_id, res[i].product_name, res[i].product_price, res[i].product_description, res[i].product_path , 0));
+    this.productService.list().subscribe( res=> {
+      for (let i = 0; i != res.length; i++) {
+        this.products.push(new product(
+          res['content'][i].product_id,
+          res['content'][i].product_name,
+          res['content'][i].product_price,
+          res['content'][i].product_description,
+          res['content'][i].product_path ,
+          0)
+        );
       }
       });
   }

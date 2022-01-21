@@ -15,8 +15,6 @@ export class ShopItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelected(){
-    this.shopItemSelected.emit();
-  }
+
 
 }

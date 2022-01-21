@@ -12,24 +12,21 @@ export class ProductService {
   }
 
   list() {
-    return this.api.get<Array<product>>(this.resourcePath);
+    return this.api.get<Array<product>>(this.resourcePath + '/getAllProducts');
   }
 
-
-
   getById(productId: number) {
-    return this.api.get<product>(this.resourcePath + '/' + productId);
+    return this.api.get<Array<product>>(this.resourcePath + '/' + productId);
   }
 
   create(products: product) {
-    console.log(products)
-    return this.api.post(this.resourcePath, products);
+    return this.api.post(this.resourcePath + '/addProduct', products);
   }
 
-  update(productId: number, products: product) {
-    return this.api.put(`${this.resourcePath}/${productId}`, products);
+  edit(productId: number, products: product) {
+    console.log("hallo")
+    return this.api.put(this.resourcePath + '/' + productId, products);
   }
-
 
   delete(productId: number) {
     return this.api.delete(this.resourcePath + '/' + productId);

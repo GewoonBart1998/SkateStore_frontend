@@ -18,8 +18,10 @@ export class UserService {
   }
 
   login(account: Account){
-    return this.api.post('/login', account).subscribe(res =>{
+    return this.api.post('/auth/loginAdmin', account).subscribe(res =>{
       this.storeJwt(res);
+      this.router.navigate(['/admin-product-list']);
+
     })
   }
 
@@ -31,7 +33,7 @@ export class UserService {
 
   getUser(){
     let currentUserRol = this.cookieservice.get('currentUserRol');
-    console.log(this.cookieservice.get('currentUserRol'))
+    // console.log(this.cookieservice.get('currentUserRol'))
     return currentUserRol;
   }
 
@@ -42,6 +44,7 @@ export class UserService {
 
   /*https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library */
   private decodeJWT(jwtToken: string) {
+
 
     if (jwtToken === null || jwtToken == undefined || jwtToken.length === 0) {
       return '';
@@ -58,8 +61,11 @@ export class UserService {
   }
 
   storeJwt(res: any) {
-    const jwtToken = res.jwtToken;
-    this.cookieservice.set("currentUserRol" , this.decodeJWT(jwtToken).rol);
-    this.cookieservice.set("currentUserName" , this.decodeJWT(jwtToken).name);
+    const jwtToken = res["content"].key;
+    console.log(this.decodeJWT(jwtToken))
+    console.log(this.decodeJWT(jwtToken).account_rol)
+    this.cookieservice.set("currentUserRol" , this.decodeJWT(jwtToken).account_rol);
+    this.cookieservice.set("currentUserName" , this.decodeJWT(jwtToken).account_name);
+
   }
 }

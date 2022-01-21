@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { product } from '../shopping-list/shop-item.model';
 import { storageService } from '../services/storage-service';
 import {ActivatedRoute} from "@angular/router";
@@ -24,11 +24,23 @@ export class ItemDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(data => {
-      this.productService.getById(data.id).subscribe(product => {
-        this.products = product;
+      this.productService.getById(data.id).subscribe(res => {
+
+        let resproduct = new product(
+          res['content'][0].product_id,
+          res['content'][0].product_name,
+          res['content'][0].product_price,
+          res['content'][0].product_description,
+          res['content'][0].product_path ,
+          0
+        );
+        this.products = resproduct;
       });
     });
   }
+
+
+
 
 
  addVerstuurItem(){
